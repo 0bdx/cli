@@ -1,3 +1,6 @@
+import { cliInit } from '@0bdx/cli-init';
+import { cliUpgrade } from '@0bdx/cli-upgrade';
+
 /**
  * The main starter for 0dbx's cli app.
  *
@@ -18,5 +21,5 @@ export default function cli(argv) {
             } argv[${i}] is type '${typeof a}' not 'string'`);
     });
 
-    return `cli(): ${argv}`;
+    return `cli():\n    ${cliInit(argv)}\n    ${cliUpgrade(argv)}`;
 }

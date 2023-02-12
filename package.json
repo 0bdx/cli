@@ -1,7 +1,7 @@
 {
   "name": "@0bdx/cli",
-  "version": "0.0.2",
-  "description": "Helpful command line utilities for initialising 0bdx apps and libraries.",
+  "version": "0.0.3",
+  "description": "Command line utility for initialising and upgrading 0bdx apps, libraries and websites.",
   "type": "module",
   "files": [
     "cli.d.ts",
@@ -18,6 +18,7 @@
   "main": "cli.js",
   "devDependencies": {
     "@0bdx/build-helpers": "^0.0.4",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "@types/node": "^18.13.0",
     "fsevents": "^2.3.2",
     "rollup": "^3.15.0"
@@ -45,5 +46,9 @@
   "bugs": {
     "url": "https://github.com/0bdx/cli/issues"
   },
-  "homepage": "https://github.com/0bdx/cli#readme"
+  "homepage": "https://github.com/0bdx/cli#readme",
+  "dependencies": {
+    "@0bdx/cli-init": "^0.0.2",
+    "@0bdx/cli-upgrade": "^0.0.3"
+  }
 }

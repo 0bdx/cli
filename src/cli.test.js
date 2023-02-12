@@ -26,9 +26,15 @@ export default function cliTest(f) {
     throws(()=>f(['Ok',123,'yup']),
         `Error: cli(): argv[1] is type 'number' not 'string'`);
 
-    // Ok.
+    // Empty argv.
     equal(f([]),
-            'cli(): ');
+`cli():
+    cliInit() with cliCore(): 
+    cliUpgrade() with cliCore(): `);
+
+    // Two argv items.
     equal(f(['Ok','yup']),
-            'cli(): Ok,yup');
+`cli():
+    cliInit() with cliCore(): Ok,yup
+    cliUpgrade() with cliCore(): Ok,yup`);
 }

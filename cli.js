@@ -1,9 +1,12 @@
 /**
  * https://www.npmjs.com/package/@0bdx/cli
- * @version 0.0.2
+ * @version 0.0.3
  * @license Copyright (c) 2023 0bdx <0@0bdx.com> (0bdx.com)
  * SPDX-License-Identifier: MIT
  */
+import { cliInit } from '@0bdx/cli-init';
+import { cliUpgrade } from '@0bdx/cli-upgrade';
+
 /**
  * The main starter for 0dbx's cli app.
  *
@@ -24,7 +27,7 @@ function cli(argv) {
             } argv[${i}] is type '${typeof a}' not 'string'`);
     });
 
-    return `cli(): ${argv}`;
+    return `cli():\n    ${cliInit(argv)}\n    ${cliUpgrade(argv)}`;
 }
 
 export { cli };
